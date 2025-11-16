@@ -1,0 +1,14 @@
+/* System theme detection support */
+@media (prefers-color-scheme: dark) {
+    /* These styles will apply if system prefers dark mode */
+    /* But our JavaScript will handle the actual theme switching */
+}
+
+/* Smooth transitions for theme changes */
+html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
