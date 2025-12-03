@@ -96,8 +96,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Contact form submission
     const contactForm = document.getElementById('contactForm');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
     
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         // Get form data
@@ -107,12 +108,52 @@ document.addEventListener('DOMContentLoaded', function() {
         const subject = formData.get('subject');
         const message = formData.get('message');
         
-        // In a real implementation, you would send this data to a server
-        // For now, we'll just show an alert
-        alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
+        // Disable submit button and show loading state
+        submitBtn.disabled = true;
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         
-        // Reset form
-        contactForm.reset();
+        try {
+            // Send to backend API (replace with your actual endpoint)
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, email, subject, message })
+            });
+            
+            if (response.ok) {
+                // Show success message
+                const successMsg = document.createElement('div');
+                successMsg.className = 'form-success-message';
+                successMsg.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully! I\'ll get back to you soon.';
+                contactForm.insertBefore(successMsg, contactForm.firstChild);
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Remove success message after 5 seconds
+                setTimeout(() => successMsg.remove(), 5000);
+            } else {
+                throw new Error('Failed to send message');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            
+            // Show error message
+            const errorMsg = document.createElement('div');
+            errorMsg.className = 'form-error-message';
+            errorMsg.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed to send message. Please try again or contact directly.';
+            contactForm.insertBefore(errorMsg, contactForm.firstChild);
+            
+            // Remove error message after 5 seconds
+            setTimeout(() => errorMsg.remove(), 5000);
+        } finally {
+            // Re-enable submit button
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+        }
     });
     
     // Initialize active section on page load

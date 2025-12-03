@@ -5,9 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arfatul Mowla Shuvo | Flutter & Mobile App Developer</title>
+    <meta name="description" content="Experienced Mobile App Developer specializing in Flutter and Android development with 6+ years of expertise in fintech, e-commerce, and GPS tracking applications.">
+    <meta name="keywords" content="Flutter Developer, Mobile App Developer, Android Developer, .NET Backend, Bangladesh">
+    <meta name="author" content="Arfatul Mowla Shuvo">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Arfatul Mowla Shuvo | Flutter & Mobile App Developer">
+    <meta property="og:description" content="Experienced Mobile App Developer specializing in Flutter and Android development with 6+ years of expertise.">
+    <meta property="og:url" content="https://mowlashuvo.com">
+    <meta property="og:image" content="assets/images/og-image.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arfatul Mowla Shuvo | Flutter & Mobile App Developer">
+    <meta name="twitter:description" content="Experienced Mobile App Developer specializing in Flutter and Android development.">
+    <meta name="twitter:image" content="assets/images/og-image.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mowlashuvo.com">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/logo.png">
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,47 +41,77 @@
     <link rel="stylesheet" href="styles/navigation.css">
     <link rel="stylesheet" href="styles/sections.css">
     <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/forms.css">
+    <link rel="stylesheet" href="styles/slider.css">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Arfatul Mowla Shuvo",
+        "jobTitle": "Flutter & Mobile App Developer",
+        "url": "https://mowlashuvo.com",
+        "email": "mowlashuvo2@gmail.com",
+        "telephone": "+8801680949744",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "House - 11/13, Lane - 02, Road - 03, Block - B, Halishahar",
+            "addressLocality": "Chittagong",
+            "addressCountry": "BD"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/mowlashuvo/",
+            "https://github.com/mowlashuvo"
+        ],
+        "image": "assets/images/profile.png",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Hi-Tech Bangla"
+        }
+    }
+    </script>
 </head>
 
 <body>
     <!-- Header & Navigation -->
-    <header id="header">
+    <header id="header" role="banner">
         <div class="container">
             <div class="nav-container">
                 <a href="#home" class="logo">
                     <img src="assets/images/logo.png" alt="Logo" class="logo-img">
                 </a>
-                <nav class="nav-links">
+                <nav class="nav-links" role="navigation" aria-label="Main navigation">
                     <a href="#home" class="nav-link active">Home</a>
                     <a href="#about" class="nav-link">About</a>
                     <a href="#experience" class="nav-link">Experience</a>
                     <a href="#skills" class="nav-link">Skills</a>
                     <a href="#projects" class="nav-link">Projects</a>
                     <a href="#contact" class="nav-link">Contact</a>
-                    <div class="theme-toggle" id="themeToggle">
-                        <i class="fas fa-sun"></i>
-                        <i class="fas fa-moon"></i>
-                    </div>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" aria-pressed="false">
+                        <i class="fas fa-sun" aria-hidden="true"></i>
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
                 </nav>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileNavDrawer">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
     </header>
 
     <!-- Mobile Navigation Overlay -->
-    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true"></div>
 
     <!-- Mobile Navigation Drawer -->
-    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" role="navigation" aria-label="Mobile navigation">
         <div class="mobile-nav-header">
             <a href="#home" class="mobile-nav-logo">
                 <img src="assets/images/logo.png" alt="Logo" class="logo-img">
             </a>
 
-            <button class="mobile-nav-close" id="mobileNavClose">
-                <i class="fas fa-times"></i>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close mobile menu">
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
         </div>
         <div class="mobile-nav-links">
@@ -91,7 +143,7 @@
     </div>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero" aria-label="Hero section with introduction">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -149,7 +201,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" aria-label="About me">
         <div class="container">
             <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
             <div class="about-content">
@@ -218,7 +270,7 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience">
+    <section id="experience" aria-label="Work experience timeline">
         <div class="container">
             <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
             <div class="experience-timeline">
@@ -292,7 +344,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
+    <section id="skills" aria-label="Technical skills and expertise">
     <div class="container">
         <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
 
@@ -420,7 +472,7 @@
 
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section id="projects" aria-label="Featured projects">
         <div class="container">
             <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
             <div class="projects-grid">
@@ -550,7 +602,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" aria-label="Contact information and form">
         <div class="container">
             <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
             <div class="contact-content">
@@ -593,22 +645,22 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" name="contact" aria-label="Contact form">
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" required>
+                            <input type="text" id="name" name="name" class="form-control" required aria-required="true">
                         </div>
                         <div class="form-group">
                             <label for="email">Your Email</label>
-                            <input type="email" id="email" class="form-control" required>
+                            <input type="email" id="email" name="email" class="form-control" required aria-required="true">
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" class="form-control" required>
+                            <input type="text" id="subject" name="subject" class="form-control" required aria-required="true">
                         </div>
                         <div class="form-group">
                             <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" required></textarea>
+                            <textarea id="message" name="message" class="form-control" required aria-required="true"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">
                             <i class="fas fa-paper-plane"></i> Send Message
@@ -620,7 +672,7 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
@@ -661,56 +713,22 @@
 
     <!-- Scripts -->
     <script src="scripts/theme.js"></script>
+    <script src="scripts/lazy-loading.js"></script>
+    <script src="scripts/form-validation.js"></script>
     <script src="scripts/animations.js"></script>
+    <script src="scripts/slider-enhanced.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/analytics.js"></script>
+    
+    <!-- Google Analytics -->
+    <!-- Replace YOUR_GA_ID with your actual Google Analytics 4 ID -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Initialize each project slider independently so the first image shows immediately
-            document.querySelectorAll('.project-slider').forEach(function (slider) {
-                const slides = slider.querySelectorAll('.slider-image');
-                if (!slides.length) return;
-
-                let index = 0;
-                // show first slide immediately
-                slides.forEach(function (s, i) {
-                    s.style.display = i === 0 ? 'block' : 'none';
-                });
-
-                let intervalRef = null;
-
-                function show(i) {
-                    slides.forEach(function (s) { s.style.display = 'none'; });
-                    slides[i].style.display = 'block';
-                }
-
-                function start() {
-                    // avoid multiple intervals
-                    if (intervalRef) return;
-                    intervalRef = setInterval(function () {
-                        index = (index + 1) % slides.length;
-                        show(index);
-                    }, 3000);
-                }
-
-                function stop() {
-                    if (intervalRef) { clearInterval(intervalRef); intervalRef = null; }
-                }
-
-                // Wire up prev/next buttons scoped to this slider
-                const prevBtn = slider.querySelector('.prev');
-                const nextBtn = slider.querySelector('.next');
-                if (prevBtn) prevBtn.addEventListener('click', function () { stop(); index = (index - 1 + slides.length) % slides.length; show(index); start(); });
-                if (nextBtn) nextBtn.addEventListener('click', function () { stop(); index = (index + 1) % slides.length; show(index); start(); });
-
-                // Pause on hover for better UX
-                slider.addEventListener('mouseenter', stop);
-                slider.addEventListener('mouseleave', start);
-
-                // Start autoplay immediately
-                start();
-            });
-        });
-    </script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR_GA_ID');
+    </script> -->
 </body>
 
 </html>

@@ -16,11 +16,23 @@ function toggleTheme() {
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
     html.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
+    
+    // Update aria-pressed attribute
+    const themeButtons = document.querySelectorAll('[id*="themeToggle"]');
+    themeButtons.forEach(btn => {
+        btn.setAttribute('aria-pressed', newTheme === 'dark' ? 'true' : 'false');
+    });
 }
 
 function setTheme(theme) {
     html.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
+    
+    // Update aria-pressed attribute
+    const themeButtons = document.querySelectorAll('[id*="themeToggle"]');
+    themeButtons.forEach(btn => {
+        btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    });
 }
 
 // Set initial theme - priority: localStorage > system preference > light
