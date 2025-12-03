@@ -78,6 +78,9 @@
     <header id="header" role="banner">
         <div class="container">
             <div class="nav-container">
+                <div class="logo-container">
+                    <img src="assets/icons/logo.png" alt="Portfolio Logo" class="logo" />
+                </div>
                 <a href="#home" class="logo">
                     <img src="assets/images/logo.png" alt="Logo" class="logo-img">
                 </a>
@@ -601,6 +604,67 @@
         </div>
     </section>
 
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="case-studies-section">
+      <div class="container">
+        <h2 class="section-title">Case <span class="gradient-text">Studies</span></h2>
+        <div class="case-studies">
+          <article class="case-study">
+            <h3>Pet Guardian</h3>
+            <p><strong>Description:</strong> A Flutter app for pet owners to track their pets' health and appointments.</p>
+            <p><strong>Challenges:</strong> Implementing real-time notifications and cross-platform compatibility.</p>
+            <p><strong>Solutions:</strong> Used Firebase for notifications and ensured platform-specific UI adjustments.</p>
+            <p><strong>Results:</strong> Achieved 10,000+ downloads with a 4.8-star rating on the Play Store.</p>
+            <a href="https://play.google.com/store/apps/details?id=petguardian" target="_blank">View on Play Store</a>
+          </article>
+          <article class="case-study">
+            <h3>SK Mobile</h3>
+            <p><strong>Description:</strong> A mobile e-commerce app built with Flutter for seamless shopping experiences.</p>
+            <p><strong>Challenges:</strong> Optimizing performance for large product catalogs.</p>
+            <p><strong>Solutions:</strong> Implemented lazy loading and efficient state management with Provider.</p>
+            <p><strong>Results:</strong> Increased user retention by 30% and reduced app load time by 50%.</p>
+            <a href="https://github.com/mowlashuvo/sk-mobile" target="_blank">View on GitHub</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+      <div class="container">
+        <h2 class="section-title">Latest <span class="gradient-text">Blog Posts</span></h2>
+        <div class="blog-posts">
+          <article class="blog-post">
+            <h3>How I Built a Flutter App</h3>
+            <p>Learn about the challenges and solutions I encountered while building a cross-platform app with Flutter.</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </article>
+          <article class="blog-post">
+            <h3>Top 5 Tips for Mobile App Development</h3>
+            <p>Discover the best practices for creating high-quality mobile applications.</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="container">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonials">
+          <blockquote class="testimonial">
+            <p>"Working with Shuvo was a fantastic experience. The app exceeded our expectations!"</p>
+            <footer>- Client A</footer>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"Shuvo's expertise in Flutter development is unmatched. Highly recommend!"</p>
+            <footer>- Client B</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" aria-label="Contact information and form">
         <div class="container">
@@ -729,6 +793,10 @@
         gtag('js', new Date());
         gtag('config', 'YOUR_GA_ID');
     </script> -->
+
+    <!-- Add GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="scripts/animations-enhanced.js"></script>
 </body>
 
 </html>

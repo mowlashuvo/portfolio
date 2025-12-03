@@ -690,11 +690,6 @@
     margin-top: auto;
 }
 
-.project-links .btn {
-    flex: 1;
-    justify-content: center;
-}
-
 /* Project card responsive */
 @media (max-width: 1024px) {
     .projects-grid {
@@ -1193,4 +1188,114 @@ footer {
     .hero-text p {
         font-size: 0.85rem;
     }
+}
+
+/* Blog Section */
+.blog-section {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+.blog-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.blog-posts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+.blog-post {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  max-width: 300px;
+  text-align: center;
+}
+.blog-post h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.blog-post p {
+  font-size: 1rem;
+  color: #555;
+}
+.blog-post a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #007BFF;
+  text-decoration: none;
+}
+.blog-post a:hover {
+  text-decoration: underline;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 2rem;
+  background-color: #fff;
+}
+.testimonials-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+.testimonial {
+  max-width: 600px;
+  font-style: italic;
+  color: #333;
+  text-align: center;
+}
+.testimonial footer {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Case Studies Section */
+.case-studies-section {
+  padding: 2rem;
+  background-color: #f4f4f4;
+}
+.case-studies-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.case-studies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+.case-study {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.case-study h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.case-study p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+.case-study a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #007BFF;
+  text-decoration: none;
+}
+.case-study a:hover {
+  text-decoration: underline;
 }
