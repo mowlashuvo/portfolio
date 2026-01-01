@@ -1080,6 +1080,7 @@ footer {
 
 /* Enhanced responsive breakpoints for hero section */
 @media (max-width: 1024px) {
+
     .hero::before,
     .hero::after {
         display: none;
@@ -1192,110 +1193,204 @@ footer {
 
 /* Blog Section */
 .blog-section {
-  padding: 2rem;
-  background-color: #f9f9f9;
+    padding: 2rem;
+    background-color: #f9f9f9;
 }
+
 .blog-section h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
+
 .blog-posts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
 }
+
 .blog-post {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  max-width: 300px;
-  text-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    max-width: 300px;
+    text-align: center;
 }
+
 .blog-post h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
 }
+
 .blog-post p {
-  font-size: 1rem;
-  color: #555;
+    font-size: 1rem;
+    color: #555;
 }
+
 .blog-post a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #007BFF;
-  text-decoration: none;
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #007BFF;
+    text-decoration: none;
 }
+
 .blog-post a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* Testimonials Section */
 .testimonials-section {
-  padding: 2rem;
-  background-color: #fff;
+    padding: 2rem;
+    background-color: #fff;
 }
+
 .testimonials-section h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
+
 .testimonials {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
 }
+
 .testimonial {
-  max-width: 600px;
-  font-style: italic;
-  color: #333;
-  text-align: center;
+    max-width: 600px;
+    font-style: italic;
+    color: #333;
+    text-align: center;
 }
+
 .testimonial footer {
-  margin-top: 0.5rem;
-  font-weight: bold;
-  color: #555;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: #555;
 }
 
 /* Case Studies Section */
+/* ============================
+   Case Studies Section
+============================ */
+
 .case-studies-section {
-  padding: 2rem;
-  background-color: #f4f4f4;
+    padding: 100px 0;
+    position: relative;
+    z-index: 1;
 }
-.case-studies-section h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
+
+.case-studies-section .section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 700;
 }
+
+/* Grid Layout */
 .case-studies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
 }
+
+/* Case Study Card */
 .case-study {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1.5rem;
-  max-width: 400px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+    border-radius: 18px;
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    transition: 0.35s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.09);
 }
+
+/* Gradient Border Glow */
+.case-study::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 1.5px;
+    background: var(--bg-card);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: 0.35s ease;
+}
+
+/* Hover Animation */
+.case-study:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+}
+
+.case-study:hover::before {
+    opacity: 1;
+}
+
 .case-study h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.3;
 }
+
 .case-study p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 0.5rem;
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-light);
 }
+
+.case-study strong {}
+
 .case-study a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #007BFF;
-  text-decoration: none;
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: 0.3s ease;
 }
+
 .case-study a:hover {
-  text-decoration: underline;
+    opacity: 0.9;
+    transform: translateX(4px);
+}
+
+/* ============================
+   Responsive
+============================ */
+
+@media (max-width: 1024px) {
+    .case-studies {
+        grid-template-columns: 1fr;
+    }
+
+    .case-study {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .case-studies-section {
+        padding: 70px 0;
+    }
+
+    .case-study h3 {
+        font-size: 1.4rem;
+    }
+
+    .case-study {
+        padding: 24px;
+    }
 }
