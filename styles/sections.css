@@ -280,7 +280,6 @@
     font-size: 1.3rem;
 }
 
-/* Responsive contact icon sizing */
 @media (max-width: 768px) {
     .contact-icon {
         width: 48px;
@@ -1080,7 +1079,6 @@ footer {
 
 /* Enhanced responsive breakpoints for hero section */
 @media (max-width: 1024px) {
-
     .hero::before,
     .hero::after {
         display: none;
@@ -1191,94 +1189,140 @@ footer {
     }
 }
 
-/* Blog Section */
+/* ===== BLOG SECTION (UPDATED) ===== */
 .blog-section {
-    padding: 2rem;
-    background-color: #f9f9f9;
+    padding: 80px 0;
+    background-color: var(--bg-color);
+    position: relative;
 }
 
-.blog-section h2 {
+.blog-section .section-title {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 50px;
 }
 
 .blog-posts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
 }
 
 .blog-post {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    max-width: 300px;
-    text-align: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+}
+
+.blog-post:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.blog-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .blog-post h3 {
     font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 12px;
+    line-height: 1.4;
 }
 
 .blog-post p {
-    font-size: 1rem;
-    color: #555;
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
 }
 
-.blog-post a {
-    display: inline-block;
-    margin-top: 0.5rem;
-    color: #007BFF;
-    text-decoration: none;
+.blog-post .btn {
+    align-self: flex-start;
+    margin-top: auto;
 }
 
-.blog-post a:hover {
-    text-decoration: underline;
-}
-
-/* Testimonials Section */
+/* ===== TESTIMONIALS SECTION (UPDATED) ===== */
 .testimonials-section {
-    padding: 2rem;
-    background-color: #fff;
+    padding: 80px 0;
+    background-color: var(--bg-light);
+    position: relative;
 }
 
-.testimonials-section h2 {
+.testimonials-section .section-title {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 50px;
 }
 
 .testimonials {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
 }
 
 .testimonial {
-    max-width: 600px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 32px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    position: relative;
+    transition: var(--transition);
+    margin: 0;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.testimonial::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 4rem;
+    color: var(--primary-color);
+    opacity: 0.1;
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.testimonial p {
     font-style: italic;
-    color: #333;
-    text-align: center;
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
 }
 
 .testimonial footer {
-    margin-top: 0.5rem;
-    font-weight: bold;
-    color: #555;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.9rem;
 }
 
-/* Case Studies Section */
-/* ============================
-   Case Studies Section
-============================ */
-
+/* ===== CASE STUDIES SECTION ===== */
 .case-studies-section {
     padding: 100px 0;
     position: relative;
     z-index: 1;
+    background-color: var(--bg-color);
 }
 
 .case-studies-section .section-title {
@@ -1288,49 +1332,27 @@ footer {
     font-weight: 700;
 }
 
-/* Grid Layout */
 .case-studies {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 35px;
 }
 
-/* Case Study Card */
 .case-study {
     padding: 32px;
     border-radius: 18px;
     backdrop-filter: blur(14px) saturate(180%);
     -webkit-backdrop-filter: blur(14px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    position: relative;
-    transition: 0.35s ease;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.09);
-}
-
-/* Gradient Border Glow */
-.case-study::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 18px;
-    padding: 1.5px;
+    border: 1px solid var(--border-color);
     background: var(--bg-card);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: 0.35s ease;
+    position: relative;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
 }
 
-/* Hover Animation */
 .case-study:hover {
     transform: translateY(-8px);
-    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
-}
-
-.case-study:hover::before {
-    opacity: 1;
+    box-shadow: var(--shadow-lg);
 }
 
 .case-study h3 {
@@ -1338,6 +1360,7 @@ footer {
     font-weight: 700;
     margin-bottom: 12px;
     line-height: 1.3;
+    color: var(--text-color);
 }
 
 .case-study p {
@@ -1347,7 +1370,9 @@ footer {
     color: var(--text-light);
 }
 
-.case-study strong {}
+.case-study strong {
+    color: var(--text-color);
+}
 
 .case-study a {
     display: inline-block;
@@ -1366,10 +1391,6 @@ footer {
     opacity: 0.9;
     transform: translateX(4px);
 }
-
-/* ============================
-   Responsive
-============================ */
 
 @media (max-width: 1024px) {
     .case-studies {
